@@ -14,18 +14,22 @@ def distribute(number, money):
         # 最大的数为平均数的2倍
         moneymax = money / number * 2
         # 判断钱是不是小于人头总数
-        if money >= number * 0.01:
+        if money > number * 0.01:
             getmoney = random.randint(1, 100) / 100 * moneymax
             if getmoney < moneymin:
                 getmoney = moneymin
                 return round(getmoney, 2)
             else:
                 return round(getmoney, 2)
+        elif money == number * 0.01:
+            return 0.01
         else:
             print("钱少于人头数，请重新输入...")
+            exit()
 
     else:
         print("输入的不是整数，请重新输入...")
+        exit()
 
 
 # 多线程领红包
