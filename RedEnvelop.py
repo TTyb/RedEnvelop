@@ -6,6 +6,7 @@ import random
 from concurrent.futures import ThreadPoolExecutor
 import time
 
+
 # 领红包的主要程序
 def distribute(number, money):
     # 判断人数是不是整数
@@ -21,9 +22,9 @@ def distribute(number, money):
                 return round(getmoney, 2)
             else:
                 return round(getmoney, 2)
-        elif money == number * 0.01:
+        elif money == round(number * 0.01, 2):
             return 0.01
-        else:
+        elif money < round(number * 0.01, 2):
             print("钱少于人头数，请重新输入...")
             exit()
 
